@@ -36,3 +36,30 @@ PasswordAuthentication no
 
 sudo systemctl restart ssh
 
+
+
+---
+
+## Create a restricted service user
+
+To create a user that cannot log in via SSH or shell (recommended for service accounts):
+
+```bash
+sudo adduser xxyy --shell=/bin/false
+
+
+Explanation
+xxyy : Username (replace with your service name)
+--shell=/bin/false : Prevents interactive shell access
+This user cannot log in via SSH
+Suitable for running background services or proxies
+Verification
+Check the user's shell:
+
+getent passwd xxyy
+
+Expected output includes:
+
+/bin/false
+
+
