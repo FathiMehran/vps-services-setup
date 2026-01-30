@@ -28,7 +28,9 @@ Key settings:
 Apply these settings:
 
 Port 2222
+
 PermitRootLogin no
+
 PasswordAuthentication no
 
 
